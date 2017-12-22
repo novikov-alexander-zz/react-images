@@ -12,7 +12,8 @@ const globals = {
   aphrodite: 'aphrodite',
   'aphrodite/no-important': 'aphrodite',
   'react-scrolllock': 'ScrollLock',
-  'react-transition-group': 'ReactTransitionGroup'
+  'react-transition-group': 'ReactTransitionGroup',
+  'react-spinners': 'ReactSpinners'
 };
 const external = Object.keys(globals);
 const babelOptions = (production) => {
