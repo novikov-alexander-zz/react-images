@@ -261,9 +261,8 @@ class Lightbox extends Component {
 		const sizes = sourceSet ? '100vw' : null;
 
 		const thumbnailsSize = showThumbnails ? this.theme.thumbnail.size : 0;
-		const heightOffset = `${this.theme.header.height + this.theme.footer.height + thumbnailsSize
-			+ (this.theme.container.gutter.vertical)}px`;
-
+		const heightOffset = this.theme.header.height + this.theme.footer.height + thumbnailsSize
+			+ (this.theme.container.gutter.vertical);
 		return (
 			<figure className={css(this.classes.figure)}>
 				{/*
@@ -273,10 +272,13 @@ class Lightbox extends Component {
 				*/}
 				{image.youtubeVideoId
 					? <iframe
-						width="640"
-						height="480"
 						src={`//www.youtube.com/embed/${image.youtubeVideoId}?fs=0&modestbranding=1&rel=0`}
 						frameBorder="0"
+						style={{
+							cursor: onClickImage ? 'pointer' : 'auto',
+							height: `calc(100vh - ${heightOffset}px)`,
+							width: `calc((100vh - ${heightOffset}px) * 16 / 9)`
+						}}
 						></iframe>
 					: <img
 						className={css(this.classes.image, imageLoaded && this.classes.imageLoaded)}
@@ -287,7 +289,7 @@ class Lightbox extends Component {
 						srcSet={sourceSet}
 						style={{
 							cursor: onClickImage ? 'pointer' : 'auto',
-							maxHeight: `calc(100vh - ${heightOffset})`,
+							maxHeight: `calc(100vh - ${heightOffset}px)`,
 						}}
 					  />
 				}
