@@ -18,6 +18,10 @@ function makeUnsplashThumbnail (id, orientation = 'landscape') {
 	return `https://images.unsplash.com/photo-${id}?dpr=2&auto=format&crop=faces&fit=crop&${dimensions}`;
 }
 
+function makeYouTubeThumbnail (youtubeId){
+	return "https://img.youtube.com/vi/" + youtubeId + "/hqdefault.jpg";
+}
+
 // Unsplash images from the "Spirit Animals" collection
 // https://unsplash.com/collections/158825/spirit-animals
 
@@ -47,6 +51,13 @@ const THUMBNAIL_IMAGES = [
 	{ id: '1470688090067-6d429c0b2600', caption: 'Photo by Ján Jakub Naništa', orientation: 'landscape' }, // https://unsplash.com/photos/xqjO-lx39B4 (Scottish Highland Cow)
 	{ id: '1470742292565-de43c4b02b57', caption: 'Photo by Eric Knoll', orientation: 'landscape' }, // https://unsplash.com/photos/DmOCkOnx-MQ (Cheetah)
 	// https://unsplash.com/photos/NUMlxTPsznM coyote?
+];
+
+const VIDEOS = [
+	{ youtubeVideoId: '_Sy5wjd-L8M', caption: 'КАПИБАРА, МИР ЖИВОТНЫХ', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/t20pc32VbrU (Hump Back Whale)
+	{ youtubeVideoId: '8VaGPX2Mc6I', caption: 'Милые капибары', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/cmKPOUgdmWc (Deer)
+	{ youtubeVideoId: 'Brc9WRd6yKg',caption: 'Капибары отдыхают в джакузи', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/h13Y8vyIXNU (Walrus)
+	{ youtubeVideoId: 'aMX6zUc3P6g',caption: 'Для тех кто не знает что это за жывотноэ Капибара!!!', orientation: 'landscape' }, // https://unsplash.com/photos/DmOCkOnx-MQ (Cheetah)
 ];
 
 const theme = {
@@ -157,7 +168,22 @@ render(
 			spinnerColor={'#D40000'}
 			spinnerSize={150}
 			showThumbnails
-	/>
+		/>
+
+		<h3>Videos</h3>
+		<Gallery images={VIDEOS.map(({ caption, orientation, youtubeVideoId, useForDemo }) => ({
+			thumbnail: makeYouTubeThumbnail(youtubeVideoId),
+			caption,
+			orientation,
+			youtubeVideoId,
+			useForDemo,
+		}))}
+			theme={theme}
+			spinner={CustomSpinner}
+			spinnerColor={'#D40000'}
+			spinnerSize={150}
+			showThumbnails
+		/>
 	</div>,
 	document.getElementById('example')
 );

@@ -61,7 +61,8 @@
 							<p>2. Example usage with JSX:</p>
 							<pre><code>&lt;Lightbox
   images={[
-    { src: '../images/photo-1.jpg' },
+	{ src: '../images/photo-1.jpg' },
+	{ src: '../images/photo-1.jpg', youtubeVideoId: 'ogMBLRHJYXU' },
     { src: '../images/photo-2.jpg' }
   ]}
   isOpen={this.state.lightboxIsOpen}
@@ -231,6 +232,12 @@
 											<td align="left">string</td>
 											<td align="left">undefined</td>
 											<td align="left">Thumbnail to display if <code>showThumbnails</code> is set to <code>true</code></td>
+										</tr>
+										<tr>
+											<td align="left">youtubeVideoId</td>
+											<td align="left">string</td>
+											<td align="left">undefined</td>
+											<td align="left">Youtube ID of video to embed if <code>youtubeVideoId</code> is set to a value.</td>
 										</tr>
 									</tbody>
 								</table>
