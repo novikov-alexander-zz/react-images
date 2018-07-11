@@ -105,7 +105,7 @@ const theme = {
 render(
 	<div>
 		<div style={{ marginBottom: 40 }}>
-			<p>Photos courtesy of <a href="https://unsplash.com/" target="_blank">Unsplash</a>. Use your keyboard to navigate <kbd>left</kbd> <kbd>right</kbd> <kbd>esc</kbd> &mdash; Also, try resizing your browser window.</p>
+			<p>Photos courtesy of <a href="https://unsplash.com/" target="_blank">Unsplash</a> and videos from <a href="https://youtube.com/" target="_blank">YouTube</a>. Use your keyboard to navigate <kbd>left</kbd> <kbd>right</kbd> <kbd>esc</kbd> &mdash; Also, try resizing your browser window.</p>
 		</div>
 		<h3>Default Options</h3>
 		<Gallery images={DEFAULT_IMAGES.map(({ caption, id, orientation, useForDemo }) => ({

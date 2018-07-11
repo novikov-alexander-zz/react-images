@@ -19,7 +19,7 @@ function makeUnsplashThumbnail (id, orientation = 'landscape') {
 }
 
 function makeYouTubeThumbnail (youtubeId){
-	return "https://img.youtube.com/vi/" + youtubeId + "/hqdefault.jpg";
+	return "https://img.youtube.com/vi/" + youtubeId + "/mqdefault.jpg";
 }
 
 // Unsplash images from the "Spirit Animals" collection
@@ -54,10 +54,10 @@ const THUMBNAIL_IMAGES = [
 ];
 
 const VIDEOS = [
-	{ youtubeVideoId: '_Sy5wjd-L8M', caption: 'КАПИБАРА, МИР ЖИВОТНЫХ', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/t20pc32VbrU (Hump Back Whale)
-	{ youtubeVideoId: '8VaGPX2Mc6I', caption: 'Милые капибары', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/cmKPOUgdmWc (Deer)
-	{ youtubeVideoId: 'Brc9WRd6yKg',caption: 'Капибары отдыхают в джакузи', orientation: 'landscape', useForDemo: true }, // https://unsplash.com/photos/h13Y8vyIXNU (Walrus)
-	{ youtubeVideoId: 'aMX6zUc3P6g',caption: 'Для тех кто не знает что это за жывотноэ Капибара!!!', orientation: 'landscape' }, // https://unsplash.com/photos/DmOCkOnx-MQ (Cheetah)
+	{ youtubeVideoId: '_Sy5wjd-L8M', caption: 'КАПИБАРА, МИР ЖИВОТНЫХ', useForDemo: true }, // https://unsplash.com/photos/t20pc32VbrU (Hump Back Whale)
+	{ youtubeVideoId: '8VaGPX2Mc6I', caption: 'Милые капибары', useForDemo: true }, // https://unsplash.com/photos/cmKPOUgdmWc (Deer)
+	{ youtubeVideoId: 'hz5lixjNYXM',caption: 'James Brown Capybara Hot Tub Party', useForDemo: true }, // https://unsplash.com/photos/h13Y8vyIXNU (Walrus)
+	{ youtubeVideoId: 'aMX6zUc3P6g',caption: 'Для тех кто не знает что это за жывотноэ Капибара!!!', useForDemo: true }, // https://unsplash.com/photos/DmOCkOnx-MQ (Cheetah)
 ];
 
 const theme = {
@@ -177,6 +177,8 @@ render(
 			orientation,
 			youtubeVideoId,
 			useForDemo,
+			src: "",
+			srcSet: [],
 		}))}
 			theme={theme}
 			spinner={CustomSpinner}
